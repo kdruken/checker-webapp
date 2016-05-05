@@ -20,15 +20,26 @@ limitations under the License.
 
 <head>
     <title>Hello, world</title>
-    <link rel="stylesheet" href="/style.css">
-    <script src="/script.js"></script>
+    <link rel="stylesheet" href="/static/style.css">
+    <script src="/static/script.js"></script>
 </head>
 
 <body>
-    <h1>Hello, world</h1>
+    <h1>Welcome to NCI Checker</h1>
 
-    <button onclick="fetchMessage()">Fetch Message</button>
-    <p id="message">Click on the button to fetch the message.</p>
+    <form>
+        <form action="javascript:fetchMessage();">
+        What is the file you want to check?:<br>
+        <input type="text" id="path"><br>
+    </form>
+
+    <button onclick="fetchMessage()">Check!</button>
+
+    <p id="gdal_checker">Click on the button to fetch the message.</p>
+    <p id="hdf5_checker">Click on the button to fetch the message.</p>
+
+
+
 </body>
 
 </html>

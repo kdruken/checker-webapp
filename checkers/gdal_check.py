@@ -9,11 +9,15 @@ class GDALChecker(Checker):
         self.type = "GDAL {}".format(gdal.VersionInfo())
 
     def check(self):
-        ds = gdal.Open(self.path)
-        if ds == None or ds.GetProjection() == "" or ds.GetGeoTransform() == "":
+        try:
+            ds = gdal.Open(self.path)
+            if ds == None or ds.GetProjection() == "" or ds.GetGeoTransform() == "":
+                self.result = False
+            else:
+                self.result = True
+
+        except:
             self.result = False
-        else:
-            self.result = True
 
         return self.to_json()
 

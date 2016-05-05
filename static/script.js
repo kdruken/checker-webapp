@@ -18,7 +18,14 @@ limitations under the License.
 
 function fetchMessage() {
     var xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("GET", "/hello", false);
+    xmlHttp.open("GET", "/gdal_checker?path=" + encodeURIComponent(document.getElementById("path").value), false);
     xmlHttp.send(null);
-    document.getElementById("message").innerHTML = xmlHttp.responseText;
+    document.getElementById("gdal_checker").innerHTML = xmlHttp.responseText;
+
+    xmlHttp.open("GET", "/hdf5_checker?path=" + encodeURIComponent(document.getElementById("path").value), false);
+    xmlHttp.send(null);
+    document.getElementById("hdf5_checker").innerHTML = xmlHttp.responseText;
+
+
+    console.log(document.getElementById("path").value)
 }
