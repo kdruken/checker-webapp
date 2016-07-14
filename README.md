@@ -1,2 +1,3 @@
-# nci_checker_tool
-A tool to check compliance and compatibility of files with NCI's software products
+# GA Geohack 2016
+
+A visualization tool for the GA Marine Tracers DB

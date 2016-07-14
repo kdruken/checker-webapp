@@ -1,28 +1,18 @@
 from flask import Flask, request
-import checkers
 
 app = Flask(__name__, static_url_path='/static')
 
-
 #### Backend
-@app.route('/gdal_checker')
-def gdal_checker():
+@app.route('/test')
+def test():
     path = request.args.get('path')
-    checker = checkers.GDALChecker(path)
-    return checker.check()
-
-@app.route('/hdf5_checker')
-def hdf5_checker():
-    path = request.args.get('path')
-    checker = checkers.HDF5Checker(path)
-    return checker.check()
-
+    #checker = checkers.GDALChecker(path)
+    return path
 
 #### Frontend
 @app.route('/')
 def root():
     return app.send_static_file('index.html')
-
 
 if __name__ == '__main__':
 
