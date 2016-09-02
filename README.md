@@ -1,3 +1,3 @@
-# GA Geohack 2016
+# checker-webapp
 
-A visualization tool for the GA Marine Tracers DB
+
